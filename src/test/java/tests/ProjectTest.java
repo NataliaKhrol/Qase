@@ -11,9 +11,12 @@ public class ProjectTest extends BaseTest {
 
     @Test
     public void createProject() {
-       loginPage.openPage();
-       loginPage.login("ruchtech.minsk@gmail.com", "ruch2022");
-       projectPage.isOpened();
-
+        loginPage.openPage();
+        loginPage.login("tashapas3579@gmail.com", "OCmaryland");
+        projectPage.isOpened();
+        createNewProjectPage.createProject();
+        editProjectPage.editProject();
+        deleteProjectPage.openPage();
+        deleteProjectPage.deleteProject();
     }
 }
