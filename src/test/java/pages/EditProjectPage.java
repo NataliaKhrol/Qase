@@ -16,8 +16,5 @@ public class EditProjectPage {
         $("#name").sendKeys("WebApplication");
         $("[class=\"ProseMirror toastui-editor-contents\"]").sendKeys("Blabla");
         $("#save-suite-button").click();
-
-
-
     }
 }
