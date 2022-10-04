@@ -6,13 +6,14 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CreateNewProjectPage {
     private By TITLE = By.cssSelector("#inputTitle");
-    private By INPUT_CODE = By.cssSelector("#inputCode");
+    private By CODE_INPUT = By.cssSelector("#inputCode");
+    private By DESCRIPTION_INPUT = By.cssSelector("#inputDescription");
 
     public void createProject() {
         $("#createButton").click();
         $(TITLE).sendKeys("Qase");
-        $(INPUT_CODE).sendKeys("QS");
-        $("#inputDescription").sendKeys("The third project in Qase");
+        $(CODE_INPUT).sendKeys("QS");
+        $(DESCRIPTION_INPUT).sendKeys("The third project in Qase");
         $("#public-access-type").click();
         $("[class=\"btn btn-primary\"]").click();
     }
