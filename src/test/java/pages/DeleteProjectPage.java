@@ -4,6 +4,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static java.awt.SystemColor.text;
 
 public class DeleteProjectPage {
+
     public void openPage() {
         open("/projects");
     }

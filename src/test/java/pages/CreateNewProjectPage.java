@@ -8,13 +8,17 @@ public class CreateNewProjectPage {
     private By TITLE = By.cssSelector("#inputTitle");
     private By CODE_INPUT = By.cssSelector("#inputCode");
     private By DESCRIPTION_INPUT = By.cssSelector("#inputDescription");
+    private By CREATE_PROJECT = By.cssSelector("#createButton");
+    private By PUBLIC_BUTTON = By.cssSelector("#public-access-type");
+    private By CREARE_BUTTON = By.cssSelector("[class=\"btn btn-primary\"]");
 
-    public void createProject() {
-        $("#createButton").click();
-        $(TITLE).sendKeys("Qase");
-        $(CODE_INPUT).sendKeys("QS");
-        $(DESCRIPTION_INPUT).sendKeys("The third project in Qase");
-        $("#public-access-type").click();
-        $("[class=\"btn btn-primary\"]").click();
+
+    public void createProject(String title, String code, String description) {
+        $(CREATE_PROJECT).click();
+        $(TITLE).sendKeys(title);
+        $(CODE_INPUT).sendKeys(code);
+        $(DESCRIPTION_INPUT).sendKeys(description);
+        $(PUBLIC_BUTTON).click();
+        $(CREARE_BUTTON).click();
     }
 }
