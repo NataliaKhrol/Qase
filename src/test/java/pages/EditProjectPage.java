@@ -12,23 +12,18 @@ public class EditProjectPage {
     private By SUITE_NAME = By.cssSelector("#name");
     private By CONTEST_ENTRY = By.cssSelector("[class=\"ProseMirror toastui-editor-contents\"]");
     private By SAVE_BTN = By.cssSelector("#save-suite-button");
+private By FILTER_BTN = By.xpath("//button[contains(text(),'Priority')]");
+    private By PRIORITY_BTN = By.xpath("//span[contains(text(),'High')]");
 
 
     public void editProject(String suiteName, String contestEntry) {
 
         $(ADD_FILTER).click();
+        $(FILTER_BTN).click();
+        $(PRIORITY_BTN).click();
         $(CREATESUITE_BTN).click();
         $(SUITE_NAME).sendKeys(suiteName);
         $(CONTEST_ENTRY).sendKeys(contestEntry);
         $(SAVE_BTN).click();
     }
 }
-
-//These comments I left just to remember my trials and mistakes
-//   private By PROJECT_BUTTON = By.cssSelector("[href=\"/project/QASEQS\"]");
-//  $(PROJECT_BUTTON).click();
-//     $(TITLE_BUTTON).sendKeys("Create new case");
-//  $("[class=\"UdZcu9\"]").click();
-//   $("[class=\"DJXdnf N7aVnv\"]").click();
-//   $("#save-case").click();
-//   $$("[class=\"nbWgel\"]").get(0).click();

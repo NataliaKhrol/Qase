@@ -14,10 +14,8 @@ public class ProjectTest extends BaseTest {
         loginPage.openPage();
         loginPage.login(user, password);
         projectPage.isOpened();
-        createNewProjectPage.createProject("QASE", "QS", "The third Project in Qase");
-        editProjectPage.editProject("WebApplication", "Blabla");
-        deleteProjectPage.openPage();
-        deleteProjectPage.deleteProject();
+        createNewProjectPage.createProject("Qase", "IO", "The third Project in Qase");
+        createNewProjectPage.isCreated();
     }
 }
-        //createNewProjectPage.isCreated();
+//createNewProjectPage.isCreated();
