@@ -1,17 +1,25 @@
 package pages;
 
+import org.openqa.selenium.By;
+
 import static com.codeborne.selenide.Selenide.*;
 import static java.awt.SystemColor.text;
 
 public class DeleteProjectPage {
+    private By PROJECT_BTN = By.cssSelector("[class=\"btn btn-dropdown\"]");
+
+    private By DELETE_BUTTON = By.xpath("//a[text()='Delete']");
+    private By CANCEL_BUTTON = By.cssSelector("[class=\"btn btn-cancel\"]");
+
 
     public void openPage() {
         open("/projects");
     }
 
     public void deleteProject() {
-        $$("[class=\"fa fa-ellipsis-h\"]").get(2).click();
-        $$("[class=\"text-danger\"]").get(2).click();
-        $("[class=\"btn btn-cancel\"]").click();
+        $(PROJECT_BTN).click();
+        $(DELETE_BUTTON).click();
+        $(CANCEL_BUTTON).click();
     }
 }
+        // $("[href=\"/project/QS/delete\"]").click();

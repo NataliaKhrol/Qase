@@ -27,7 +27,7 @@ public class BaseTest {
         password = PropertyReader.getProperty("qase.password");
         Configuration.browser = "chrome";
         // Configuration.headless = true;
-        Configuration.timeout = 100000;
+        Configuration.timeout = 10000;
         // Configuration.clickViaJs = true;
         // Configuration.fastSetValue = true;
 
