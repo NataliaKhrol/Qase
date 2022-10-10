@@ -17,33 +17,42 @@ public class ProjectApiTest {
     @Test
     public void createProject() {
         projectAPI = new ProjectAPI();
-        projectAPI.create("{\\n\" +\n" +
-                "                 \"     \\\"title\\\": \\\"APIProject\\\",\\n\" +\n" +
-                "                 \"     \\\"code\\\": \\\"API3\\\",\\n\" +\n" +
-                "                 \"     \\\"description\\\": \\\"bnlabla\\\",\\n\" +\n" +
-                "                 \"     \\\"access\\\": \\\"all\\\",\\n\" +\n" +
-                "                 \"     \\\"group\\\": \\\"iubyvadsiubasdbijads\\\"\\n\" +\n" +
-                "                 \"}");
+        projectAPI.create("{\n" +
+                "     \"title\": \"APIProject\",\n" +
+                "     \"code\": \"API10\",\n" +
+                "     \"description\": \"blabla\",\n" +
+                "     \"access\": \"all\",\n" +
+                "     \"group\": \"fgolkkj\"\n" +
+                "}");
 
     }
 
+    @Test
     public void createProjectOnlyRequiredFields() {
         //TODO generate unique code faker
         projectAPI = new ProjectAPI();
-        projectAPI.create("{\n" +
+        Gson gson = new Gson();
+        Project project = Project.builder().
+                title("APIProject").
+                code("API11").
+                build();
+        projectAPI.create(gson.toJson(project));
+        /*
+        "{\n" +
                 "     \"title\": \"APIProject\",\n" +
-                "     \"code\": \"API3\"\n" +
-                "}");
+                "     \"code\": \"API2\"\n" +
+                "}"
+         */
     }
 
-
+    @Test
     public void createProject400NoTitle() {
         //TODO generate unique code faker
         projectAPI = new ProjectAPI();
         Gson gson = new Gson();
         Project project = Project.builder().
                 title("APIProject").
-                code("API2").
+                code("API12").
                 build();
         projectAPI.create(gson.toJson(project));
 
@@ -52,6 +61,6 @@ public class ProjectApiTest {
     @Test
     public void getProject() {
         projectAPI = new ProjectAPI();
-        ApiResponse response = projectAPI.getProjectByCode("API1");
+        ApiResponse response = projectAPI.getProjectByCode("API10");
     }
 }

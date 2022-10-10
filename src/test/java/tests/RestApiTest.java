@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.when;
 public class RestApiTest {
 
     @Test
-    public void blabla(){
+    public void blabla() {
         when().
                 get("https://r.onliner.by/sdapi/kurs/api/bestrate?currency=USD&type=NBRB").
                 then().
